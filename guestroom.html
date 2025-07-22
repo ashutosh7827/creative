@@ -242,9 +242,10 @@ font-family:sans-serif;
   left:13%;
   top:198%;
 }
-.image .bulb
+.image #bulb
 {
-  width:44%;
+  width:34%;
+  height:100px;
 }
 
 .image .tv
@@ -432,7 +433,7 @@ font-family:sans-serif;
 
 font-size:15px;
 margin-left:3%;
-margin-top:-12%;
+margin-top:-10%;
 font-family:sans-serif;
 
 }
@@ -478,9 +479,10 @@ font-family:sans-serif;
   left:78%;
   top:109%;
 }
-.image .bulb
+.image #bulb
 {
-  width:44%;
+   width:34%;
+  height:88px;
 }
 
 .image .tv
@@ -577,7 +579,7 @@ Air Conditioner
 </div>
 
 <div class="price">
-<p>On</p>
+<p>On/off</p>
 
 
 </div>
@@ -594,7 +596,7 @@ Air Conditioner
 <div class="cards">
 
 <div class="image">
-<img src="images/bulb.png" class="bulb">
+<img src="images/bulbs.gif" id="bulb">
 </div>
 
 <div class="name">
@@ -603,14 +605,14 @@ Stamp Light
 </div>
 
 <div class="price">
-<p>On</p>
+<p>On/off</p>
 
 
 </div>
  <div id="buttons">
 <label class="switch">
   <input type="checkbox" checked>
-  <span class="slider round"></span>
+  <span onclick="toggleBulb()" class="slider round"></span>
 </label>
 </div>
 
@@ -630,7 +632,7 @@ Smart Fan
 </div>
 
 <div class="price">
-<p>On</p>
+<p>On/off</p>
 
 
 </div>
@@ -656,7 +658,7 @@ Smart TV
 </div>
 
 <div class="price">
-<p>On</p>
+<p>On/off</p>
 
 
 </div>
@@ -682,7 +684,7 @@ Google home
 </div>
 
 <div class="price">
-<p>On</p>
+<p>On/off</p>
 
 
 </div>
@@ -708,7 +710,7 @@ Wifi
 </div>
 
 <div class="price">
-<p>On</p>
+<p>On/off</p>
 
 
 </div>
@@ -753,6 +755,20 @@ Wifi
     </ol>
 
 </div>
+
+<script>
+    let isOn = false;
+
+    function toggleBulb() {
+      const bulb = document.getElementById("bulb");
+      if (isOn) {
+        bulb.src = "images/bulbs.gif";
+      } else {
+        bulb.src = "images/bulboff.gif";
+      }
+      isOn = !isOn;
+    }
+  </script>
     
         
 
