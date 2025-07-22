@@ -16,6 +16,7 @@ to{opacity:1;}
         background:#ebedef;
         overflow-x: hidden;
         animation:ani 1s;
+        
 
 
         
@@ -296,6 +297,21 @@ display:inline;
 margin:6%;
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode .name
+{
+color:black;
+}
+
+.dark-mode .price
+{
+color:black;
+}
+
 
 
 @media screen and (max-width: 600px)
@@ -526,6 +542,21 @@ margin:6%;
     width:6%;
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode .name
+{
+color:black;
+}
+
+.dark-mode .price
+{
+color:black;
+}
+
 }
 
 
@@ -720,11 +751,13 @@ Home Theater
 
 
     <script>
+            var element = document.body;
             let toggle = document.querySelector(".toggle")
             let text = document.querySelector(".text")
 
             function Animatedtoggle()
             {
+              element.classList.toggle("dark-mode")
               toggle.classList.toggle("active")
 
               if(toggle.classList.contains("active"))

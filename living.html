@@ -201,6 +201,16 @@ font-family:sans-serif;
 
 }
 
+.dark-mode .name
+{
+color:black;
+}
+
+.dark-mode .price
+{
+color:black;
+}
+
 #button
 {
   position:absolute;
@@ -293,6 +303,11 @@ padding:0px;
 cursor:pointer;
 display:inline;
 margin:6%;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
 
@@ -524,6 +539,21 @@ margin:6%;
     width:6%;
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode .name
+{
+color:black;
+}
+
+.dark-mode .price
+{
+color:black;
+}
+
 }
 
 
@@ -718,11 +748,16 @@ Smart Computer
 
 
     <script>
+      var element = document.body;
             let toggle = document.querySelector(".toggle")
             let text = document.querySelector(".text")
+            
+  
 
             function Animatedtoggle()
             {
+               element.classList.toggle("dark-mode")
+              
               toggle.classList.toggle("active")
 
               if(toggle.classList.contains("active"))
@@ -734,6 +769,8 @@ Smart Computer
               text.innerHTML = "Off"
             }
             }
+
+
           </script>
 
           <div id="col">
