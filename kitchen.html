@@ -311,6 +311,11 @@ color:black;
 color:black;
 }
 
+.image #fan
+{
+  width:50%;
+}
+
 
 @media screen and (max-width: 600px)
 {
@@ -647,7 +652,7 @@ Stamp Light
 <div class="cards">
 
 <div class="image">
-<img src="images/fan.png">
+<img src="images/fanoff.gif" id="fan">
 </div>
 
 <div class="name">
@@ -656,20 +661,19 @@ Smart Fan
 </div>
 
 <div class="price">
-<p>On</p>
+<p>On/Off</p>
 
 
 </div>
  <div id="btn">
 <label class="switch">
   <input type="checkbox" checked>
-  <span class="slider round"></span>
+  <span onclick="toggleFan()" class="slider round"></span>
 </label>
 </div>
 
 
 </div>  
-
 <div class="cards">
 
 <div class="image">
@@ -793,6 +797,23 @@ Lamp
         bulb.src = "images/bulboff.gif";
       }
       isOn = !isOn;
+    }
+  </script>
+
+  <script>
+    let fanOn = false;
+
+    function toggleFan() {
+      const fan = document.getElementById("fan");
+      if (fanOn)
+       {
+        fan.src = "images/fanon.gif";
+      } 
+      else 
+      {
+        fan.src = "images/fanoff.gif";
+      }
+      fanOn = !fanOn;
     }
   </script>
         

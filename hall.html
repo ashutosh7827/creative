@@ -248,12 +248,17 @@ font-family:sans-serif;
   height:100px;
 }
 
-.image .tv
+.image #tv
 {
-  width:85%;
-  margin-left:-8%;
+  width:130px;
+  height:100px
+  
 }
 
+.image #fan
+{
+  width:50%;
+}
 
 .home
 {
@@ -500,10 +505,11 @@ font-family:sans-serif;
   height:88px;
 }
 
-.image .tv
+.image #tv
 {
-  width:85%;
-  margin-left:-10%;
+  width:58%;
+  height:90px;
+  
 }
 
 .image .sound
@@ -653,7 +659,7 @@ Stamp Light
 <div class="cards">
 
 <div class="image">
-<img src="images/fan.png">
+<img src="images/fanoff.gif" id="fan">
 </div>
 
 <div class="name">
@@ -662,14 +668,14 @@ Smart Fan
 </div>
 
 <div class="price">
-<p>On/off</p>
+<p>On/Off</p>
 
 
 </div>
  <div id="btn">
 <label class="switch">
   <input type="checkbox" checked>
-  <span class="slider round"></span>
+  <span onclick="toggleFan()" class="slider round"></span>
 </label>
 </div>
 
@@ -679,7 +685,7 @@ Smart Fan
 <div class="cards">
 
 <div class="image">
-<img src="images/tv.png" class="tv">
+<img src="images/offtv.png" id="tv">
 </div>
 
 <div class="name">
@@ -688,14 +694,14 @@ Smart TV
 </div>
 
 <div class="price">
-<p>On/off</p>
+<p>On/Off</p>
 
 
 </div>
  <div id="btn-tv">
 <label class="switch">
   <input type="checkbox" checked>
-  <span class="slider round"></span>
+  <span onclick="toggleTv()" class="slider round"></span>
 </label>
 </div>
 
@@ -766,7 +772,8 @@ Wifi
                element.classList.toggle("dark-mode")
               toggle.classList.toggle("active")
 
-              if(toggle.classList.contains("active"))
+              if
+              (toggle.classList.contains("active"))
             {
               text.innerHTML = "On"
             }
@@ -795,10 +802,46 @@ Wifi
       const bulb = document.getElementById("bulb");
       if (isOn) {
         bulb.src = "images/bulbs.gif";
-      } else {
+      } 
+      else
+       {
         bulb.src = "images/bulboff.gif";
       }
       isOn = !isOn;
+    }
+  </script>
+
+  <script>
+    let fanOn = false;
+
+    function toggleFan() {
+      const fan = document.getElementById("fan");
+      if (fanOn)
+       {
+        fan.src = "images/fanon.gif";
+      } 
+      else 
+      {
+        fan.src = "images/fanoff.gif";
+      }
+      fanOn = !fanOn;
+    }
+  </script>
+
+  <script>
+    let tvOn = false;
+
+    function toggleTv() {
+      const fan = document.getElementById("tv");
+      if (tvOn)
+       {
+        tv.src = "images/ontv.png";
+      } 
+      else 
+      {
+        tv.src = "images/offtv.png";
+      }
+      tvOn = !tvOn;
     }
   </script>
     
